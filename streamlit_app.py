@@ -26,7 +26,7 @@ Example:
 
 Output rules:
 - Return only valid JSON.
-- Use exactly these keys: console, genre, player_mode.
+- Use exactly these keys: name,console, genre, player_mode.
 - Use a JSON array when generating multiple records.
 - Do not include explanations or Markdown code fences."""
 
