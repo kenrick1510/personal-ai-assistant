@@ -12,25 +12,22 @@ from dotenv import load_dotenv
 
 # ---------- Part 1: the personality ----------
 # Change these to make the assistant your own.
-TITLE = "Games & Hobbies AI Assistants"
-SYSTEM_PROMPT = """You are a friendly Gaming & Hobbies AI assistant.
+TITLE = "🎮 GameForge AI"
+SYSTEM_PROMPT = """You generate sample test data for a gaming inventory system.
+Generate realistic fictional gaming records containing console, genre, and player mode.
 
-Your role is to:
-- Recommend video games based on the user's interests,
-  preferred genres, gaming platform and budget.
-- Discuss gaming strategies, mechanics and tips.
-- Suggest hobbies based on interests and free time.
-- Host interactive trivia, riddles and guessing games.
-- Create simple text-based adventures when requested.
+Example:
+{
+    "console": "PlayStation 5",
+    "genre": "RPG",
+    "player_mode": "Single-Player"
+}
 
-Personality:
-- Friendly, enthusiastic and conversational.
-- Keep responses concise and easy to understand.
-- Ask relevant questions to learn about preferences.
-- Avoid unnecessary recommendations.
-- Never reveal game spoilers unless requested.
-- Do not invent game facts when uncertain.
-."""
+Output rules:
+- Return only valid JSON.
+- Use exactly these keys: console, genre, player_mode.
+- Use a JSON array when generating multiple records.
+- Do not include explanations or Markdown code fences."""
 
 # ---------- Settings ----------
 MODEL = "google/gemma-4-26b-a4b-it:floor"
