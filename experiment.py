@@ -22,18 +22,21 @@ RUNS = 3  # how many times to ask each question, because replies vary
 
 # ---------- Part 1: the two system prompts ----------
 # A is what you have now. B is A with ONE change.
-SYSTEM_PROMPT_A = """You are a friendly, helpful assistant.
-Keep your answers short: two or three sentences."""
+SYSTEM_PROMPT_A = """You generated sample test data for a gaming inventory system."""
 
-SYSTEM_PROMPT_B = """You are a friendly, helpful assistant.
-Keep your answers short: two or three sentences.
-Always end with a follow-up question."""
+SYSTEM_PROMPT_B = """You generated sample test data for a gaming inventory system.
+Every resposne should be like the following:
+{'console':'Playstation',
+'genre':'RPG',
+'player':'Single-Player'
+}."""
 
 # ---------- Part 2: the test inputs ----------
 # The messages a visitor might send. Both prompts get the same ones.
 TEST_INPUTS = [
-    "What's the best way to learn to code?",
-    "I'm having a bad day.",
+
+"Generate me a sample dataset.",
+
 ]
 
 # Read your key from the .env file, the same way your app does.
