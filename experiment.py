@@ -22,21 +22,37 @@ RUNS = 3  # how many times to ask each question, because replies vary
 
 # ---------- Part 1: the two system prompts ----------
 # A is what you have now. B is A with ONE change.
-SYSTEM_PROMPT_A = """You generated sample test data for a gaming inventory system."""
+SYSTEM_PROMPT_A = """You generate sample test data for a gaming inventory system.
+Generate realistic fictional gaming records containing console, genre, and player mode.
 
-SYSTEM_PROMPT_B = """You generated sample test data for a gaming inventory system.
-Every resposne should be like the following:
-{'console':'Playstation',
-'genre':'RPG',
-'player':'Single-Player'
-}."""
+Example:
+{
+    "console": "PlayStation 5",
+    "genre": "RPG",
+    "player_mode": "Single-Player"
+}"""
 
-# ---------- Part 2: the test inputs ----------
+SYSTEM_PROMPT_B = """You generate sample test data for a gaming inventory system.
+Generate realistic fictional gaming records containing console, genre, and player mode.
+
+Example:
+{
+    "console": "PlayStation 5",
+    "genre": "RPG",
+    "player_mode": "Single-Player"
+}
+
+Output rules:
+- Return only valid JSON.
+- Use exactly these keys: console, genre, player_mode.
+- Use a JSON array when generating multiple records.
+- Do not include explanations or Markdown code fences."""
+
 # The messages a visitor might send. Both prompts get the same ones.
 TEST_INPUTS = [
-
-"Generate me a sample dataset.",
-
+"Generate a sample gaming dataset.",
+"Generate three RPG gaming records.",
+"Generate sample multiplayer gaming records."
 ]
 
 # Read your key from the .env file, the same way your app does.
