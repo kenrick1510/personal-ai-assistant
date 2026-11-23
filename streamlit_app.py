@@ -18,8 +18,8 @@ Generate realistic fictional gaming records containing console, genre, and playe
 
 Example:
 {
+    "name": "PUBG",
     "console": "PlayStation 5",
-    "name: PUBG",
     "genre": "RPG",
     "player_mode": "Single-Player"
 }
